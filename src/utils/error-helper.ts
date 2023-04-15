@@ -63,6 +63,6 @@ export function retryForHttpStatus(httpStatus: number | undefined) {
   // Do not retry on status 4xx, status 0 (CORS error), or undefined (decrypt/gap/parse error)
   return (
     (httpStatus === 0 && navigator.onLine === false) ||
-    (!!httpStatus && (httpStatus < 400 || httpStatus > 499))
+    (!!httpStatus && (httpStatus < 403 || httpStatus > 499))
   );
 }
